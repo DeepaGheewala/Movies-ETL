@@ -8,14 +8,14 @@ So when data is collected in one system, we need to clean, process and then stor
 The process of importing data from outside the system, cleaning or processing the data to a meaningful use to the system and then transforming to the system is called as **ETL** process. 
 ie. E - Extract, T - Transform and L - Load 
 
-<img>
+<img src="Images/ETL.png" height="250" width="200">
 
 ### Project Description
 The Amazing Prime, a video streaming company, decides to sponsor *hackathon*, where participants trying to predict which low budget movies being released will become popular. Participants of a hackathon need a clean data in order to perform analyses for their algorithms. In order to provide organized and clean dataset, they need to follow **ETL** process:
 
 * Extracting data from two different sources.
-	* Wikipedia website for all movies released since 1990 - [wikipedia json file]( link  to file ) is provided 
-	* data from Kaggle website for rating data. - [Kaggle data file](file link)
+	* Wikipedia website for all movies released since 1990 - [wikipedia json file](#Resources/wikipedia-movies.json) is provided 
+	* data from Kaggle website for rating data. - [Kaggle metadata file](#Resources/movies_metadata.csv) and **MovieLens rating data**
 * Transforming data using Jupyter Notebook, Python, Pandas and Python RegEx module.
 * Loading data using PostgreSQL and pgAdmin to host final cleaned data set
 
@@ -28,13 +28,13 @@ Once the relevant data is collected it has to be loaded into an intermediate or 
 
 Here participants were given
 * The Kaggle dataset pulls from the MovieLens dataset of over 20 million reviews
-	* movies_metadata.csv ( ) - Has all movies data 
-	* ratings.csv ( ) - Has all the Ratings data of each movie
+	* [movies_metadata.csv](#Resources/movies_metadata.csv) - Has all movies data 
+	* ratings.csv - Has all the Ratings data of each movie *its not uploaded as its very huge file
 * Wikipedia
-	* wikipedia-movies.json ( )- wikipedia scraped data of movies
+	* [wikipedia-movies.json](#Resources/wikipedia-movies.json)- wikipedia scraped data of movies
 
 Let's take a look at code written for this step
-[ETL_function_test.ipynb]() - Here we load all the files into a dataframe using a function ***data_transform_load()*** 
+[ETL_function_test.ipynb](#ETL_function_test.ipynb) - Here we load all the files into a dataframe using a function ***data_transform_load()*** 
 
 ``` Python
 	def extract_transform_load():
@@ -75,28 +75,45 @@ Below are few ways to process. Each data is different so this processing can var
 * fetch one column from the dataframe at a time and Process it in seperate Series. Once it is processed then add back to the main dataframe. Drop the original column. 
 
 * Processing of data 
-	- Financial data - it can be strored in different formates, so to capture each different format we would need different regular expressions like ``` Python r'\$\d+\.?\d*\s*[mb]illion' ``` , ``` Python r'\$\d{1,3}(?:,\d{3})+' ``` and more
+	- Financial data - it can be strored in different formates, so to capture each different format we would need different regular expressions like ``` r'\$\d+\.?\d*\s*[mb]illion' ``` , ``` r'\$\d{1,3}(?:,\d{3})+' ``` and more
 
-	- Date field - Fetch all the well formated date field data using regular expression like ``` Python  r'\d{4}.[01]\d.[0123]\d' ``` , ``` Python  r'\d{4}' ```  and more 
+	- Date field - Fetch all the well formated date field data using regular expression like ```  r'\d{4}.[01]\d.[0123]\d' ``` , ```  r'\d{4}' ```  and more 
 
-	- Time field - similarly by using RegEx ``` Python r'^\d*\s*m' ``` , ``` Python r'(\d+)\s*ho?u?r?s?\s*(\d*)|(\d+)\s*m' ``` and more
+	- Time field - similarly by using RegEx ``` r'^\d*\s*m' ``` , ``` r'(\d+)\s*ho?u?r?s?\s*(\d*)|(\d+)\s*m' ``` and more
 	
 	- Text filed - this field is used in various ways, list can be stored, any type of data numeric, string, special characters etc. In such case we need to parse one by one.
 				 - Make all the list to strings, try to find common format and parse using RegEx, for the unparsed data, if rows are very less it can be dropped or manually modified.
 	
 * The ETL process, and code refactoring, write a function that reads in the three data files and creates three separate DataFrames. 
 
-	* ETL_clean_wiki_movies.ipynb (links)- Process Wikipedia data 
-	* ETL_clean_kaggle_data.ipynb() -  Process Kaggle and Ratings data files and then merge with Wikipedia and create movies_df
+	* [ETL_clean_wiki_movies.ipynb] (#ETL_clean_wiki_movies.ipynb)- Process Wikipedia data 
+	* [ETL_clean_kaggle_data.ipynb](#ETL_clean_kaggle_data.ipynb) -  Process Kaggle and Ratings data files and then merge with Wikipedia and create movies_df
 
 ### Step 3 - Load
 Load - In this step the clean, processed data is finally pushed to a Database and stored for the system to use.
 This data can also be used for further report generation for predicting or analyses for higher management.
 
-[ETL_create_database.ipynb]() 
+[ETL_create_database.ipynb](#ETL_create_database.ipynb) 
 * This file connects to SQL database using **sqlalchemy** and **psycopg2** to save the merged movies dataframe **movies_df** to Movies tables. 
 * Here we also write a batch process code to import Ratings.csv into ratings table.
 The results of load is in below images
 
 <img > 
 <img>
+
+### Summary
+
+## Resources
+
+### Software:
+
+* Python 3.10.2
+* Visual Studio Code 1.64.2
+* PostgreSQL and PgAdmin
+
+### Dependencies:
+
+* Pandas
+* Regex
+* Numpy
+* Sqlalchemy
