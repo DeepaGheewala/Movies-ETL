@@ -93,7 +93,7 @@ Below are few ways to process. Each data is different so this processing can var
 Load - In this step the clean, processed data is finally pushed to a Database and stored for the system to use.
 This data can also be used for further report generation for predicting or analyses for higher management.
 
-[ETL_create_database.ipynb](#ETL_create_database.ipynb) 
+[ETL_create_database.ipynb](ETL_create_database.ipynb) 
 * This file connects to SQL database using **sqlalchemy** and **psycopg2** to save the merged movies dataframe **movies_df** to Movies tables. 
 * Here we also write a batch process code to import Ratings.csv into ratings table.
 The results of load is in below images
