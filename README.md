@@ -99,10 +99,10 @@ This data can also be used for further report generation for predicting or analy
 The results of load is in below images
 
 #### 1. Movies Table
-<p align="center"> <img src="Resources/movies_query.png"  align="center" height="250" width="400"> </p>
+<p align="center"> <img src="Resources/movies_query.png"  align="center" height="250" width="500"> </p>
 
 #### 2. Ratings Table
-<p align="center"> <img src="Resources/ratings_query.png"  align="center" height="250" width="400"> </p>
+<p align="center"> <img src="Resources/ratings_query.png"  align="center" height="250" width="500"> </p>
 
 
 ## Resources
