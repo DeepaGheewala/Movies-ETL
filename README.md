@@ -14,8 +14,8 @@ ie. E - Extract, T - Transform and L - Load
 The Amazing Prime, a video streaming company, decides to sponsor *hackathon*, where participants trying to predict which low budget movies being released will become popular. Participants of a hackathon need a clean data in order to perform analyses for their algorithms. In order to provide organized and clean dataset, they need to follow **ETL** process:
 
 * Extracting data from two different sources.
-	* Wikipedia website for all movies released since 1990 - [wikipedia json file](#Resources/wikipedia-movies.json) is provided 
-	* data from Kaggle website for rating data. - [Kaggle metadata file](#Resources/movies_metadata.csv) and **MovieLens rating data**
+	* Wikipedia website for all movies released since 1990 - [wikipedia json file](Resources/wikipedia-movies.json) is provided 
+	* data from Kaggle website for rating data. - [Kaggle metadata file](Resources/movies_metadata.csv) and **MovieLens rating data**
 * Transforming data using Jupyter Notebook, Python, Pandas and Python RegEx module.
 * Loading data using PostgreSQL and pgAdmin to host final cleaned data set
 
@@ -28,13 +28,13 @@ Once the relevant data is collected it has to be loaded into an intermediate or 
 
 Here participants were given
 * The Kaggle dataset pulls from the MovieLens dataset of over 20 million reviews
-	* [movies_metadata.csv](#Resources/movies_metadata.csv) - Has all movies data 
+	* [movies_metadata.csv](Resources/movies_metadata.csv) - Has all movies data 
 	* ratings.csv - Has all the Ratings data of each movie *its not uploaded as its very huge file
 * Wikipedia
-	* [wikipedia-movies.json](#Resources/wikipedia-movies.json)- wikipedia scraped data of movies
+	* [wikipedia-movies.json](Resources/wikipedia-movies.json)- wikipedia scraped data of movies
 
 Let's take a look at code written for this step
-[ETL_function_test.ipynb](#ETL_function_test.ipynb) - Here we load all the files into a dataframe using a function ***data_transform_load()*** 
+[ETL_function_test.ipynb](ETL_function_test.ipynb) - Here we load all the files into a dataframe using a function ***data_transform_load()*** 
 
 ``` Python
 	def extract_transform_load():
@@ -60,7 +60,7 @@ Let's take a look at code written for this step
 	
 ```
 
-The data is loaded and can be viewed in [wiki_movies_df]() , [kaggle_metadata]() and [ratings]()
+The data is loaded and can be viewed in [wiki_movies_df](Images/Dev11.png) , [kaggle_metadata](Images/Dev12.png) and [ratings](Images/Dev13.png)
 
 ### Step 2 - Transform 
 Transform - In this step we need to process the data , it can also be called as stagging step where we create some staging tables or dataframes to temporary load the data and perform several cleaning filters and data manupilations.
@@ -86,8 +86,8 @@ Below are few ways to process. Each data is different so this processing can var
 	
 * The ETL process, and code refactoring, write a function that reads in the three data files and creates three separate DataFrames. 
 
-	* [ETL_clean_wiki_movies.ipynb](#ETL_clean_wiki_movies.ipynb)- Process Wikipedia data 
-	* [ETL_clean_kaggle_data.ipynb](#ETL_clean_kaggle_data.ipynb) -  Process Kaggle and Ratings data files and then merge with Wikipedia and create movies_df
+	* [ETL_clean_wiki_movies.ipynb](ETL_clean_wiki_movies.ipynb)- Process Wikipedia data 
+	* [ETL_clean_kaggle_data.ipynb](ETL_clean_kaggle_data.ipynb) -  Process Kaggle and Ratings data files and then merge with Wikipedia and create [movies_df](Images/Dev33.png)
 
 ### Step 3 - Load
 Load - In this step the clean, processed data is finally pushed to a Database and stored for the system to use.
