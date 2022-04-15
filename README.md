@@ -98,8 +98,11 @@ This data can also be used for further report generation for predicting or analy
 * Here we also write a batch process code to import Ratings.csv into ratings table.
 The results of load is in below images
 
-<img src="Resources/movies_query.png  align="center" height="250" width="400"> 
-<img src="Resources/ratings_query.png  align="center" height="250" width="400">
+#### 1. Movies Table
+<img src="Resources/movies_query.png"  align="center" height="250" width="400"> 
+
+#### 2. Ratings Table
+<img src="Resources/ratings_query.png"  align="center" height="250" width="400">
 
 ### Summary
 
