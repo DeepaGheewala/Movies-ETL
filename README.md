@@ -8,7 +8,7 @@ So when data is collected in one system, we need to clean, process and then stor
 The process of importing data from outside the system, cleaning or processing the data to a meaningful use to the system and then transforming to the system is called as **ETL** process. 
 ie. E - Extract, T - Transform and L - Load 
 
-<p align="center"> <img src="Images/ETL.png" align="center" height="250" width="400"> /p?
+<p align="center"> <img src="Images/ETL.png" align="center" height="250" width="400"> /p>
 
 ### Project Description
 The Amazing Prime, a video streaming company, decides to sponsor *hackathon*, where participants trying to predict which low budget movies being released will become popular. Participants of a hackathon need a clean data in order to perform analyses for their algorithms. In order to provide organized and clean dataset, they need to follow **ETL** process:
