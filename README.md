@@ -104,7 +104,6 @@ The results of load is in below images
 #### 2. Ratings Table
 <img src="Resources/ratings_query.png"  align="center" height="250" width="400">
 
-### Summary
 
 ## Resources
 
