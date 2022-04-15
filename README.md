@@ -8,7 +8,7 @@ So when data is collected in one system, we need to clean, process and then stor
 The process of importing data from outside the system, cleaning or processing the data to a meaningful use to the system and then transforming to the system is called as **ETL** process. 
 ie. E - Extract, T - Transform and L - Load 
 
-<img src="Images/ETL.png" height="250" width="200">
+<img src="Images/ETL.png" align="center" height="250" width="400">
 
 ### Project Description
 The Amazing Prime, a video streaming company, decides to sponsor *hackathon*, where participants trying to predict which low budget movies being released will become popular. Participants of a hackathon need a clean data in order to perform analyses for their algorithms. In order to provide organized and clean dataset, they need to follow **ETL** process:
@@ -86,7 +86,7 @@ Below are few ways to process. Each data is different so this processing can var
 	
 * The ETL process, and code refactoring, write a function that reads in the three data files and creates three separate DataFrames. 
 
-	* [ETL_clean_wiki_movies.ipynb] (#ETL_clean_wiki_movies.ipynb)- Process Wikipedia data 
+	* [ETL_clean_wiki_movies.ipynb](#ETL_clean_wiki_movies.ipynb)- Process Wikipedia data 
 	* [ETL_clean_kaggle_data.ipynb](#ETL_clean_kaggle_data.ipynb) -  Process Kaggle and Ratings data files and then merge with Wikipedia and create movies_df
 
 ### Step 3 - Load
@@ -98,8 +98,8 @@ This data can also be used for further report generation for predicting or analy
 * Here we also write a batch process code to import Ratings.csv into ratings table.
 The results of load is in below images
 
-<img > 
-<img>
+<img src="Resources/movies_query.png  align="center" height="250" width="400"> 
+<img src="Resources/ratings_query.png  align="center" height="250" width="400">
 
 ### Summary
 
